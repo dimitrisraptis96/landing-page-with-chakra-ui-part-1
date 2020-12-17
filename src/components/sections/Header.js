@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, Button, Stack, PseudoBox } from "@chakra-ui/core";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import Logo from "../ui/Logo";
-import theme from "../../utils/theme";
 
-const MenuItems = props => {
-  const { children, isLast, to = "/", ...rest } = props;
+const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   return (
     <Text
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
@@ -40,7 +38,7 @@ const MenuIcon = () => (
   </svg>
 );
 
-const Header = props => {
+const Header = (props) => {
   const [show, setShow] = React.useState(false);
   const toggleMenu = () => setShow(!show);
 
@@ -73,16 +71,16 @@ const Header = props => {
         flexBasis={{ base: "100%", md: "auto" }}
       >
         <Flex
-          align={["center", "center", "center", "center"]}
+          align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItems to="/">Home</MenuItems>
-          <MenuItems to="/how">How It works </MenuItems>
-          <MenuItems to="/faetures">Features </MenuItems>
-          <MenuItems to="/pricing">Pricing </MenuItems>
-          <MenuItems to="/signup" isLast>
+          <MenuItem to="/">Home</MenuItem>
+          <MenuItem to="/how">How It works </MenuItem>
+          <MenuItem to="/faetures">Features </MenuItem>
+          <MenuItem to="/pricing">Pricing </MenuItem>
+          <MenuItem to="/signup" isLast>
             <Button
               size="sm"
               rounded="md"
@@ -94,7 +92,7 @@ const Header = props => {
             >
               Create Account
             </Button>
-          </MenuItems>
+          </MenuItem>
         </Flex>
       </Box>
     </Flex>

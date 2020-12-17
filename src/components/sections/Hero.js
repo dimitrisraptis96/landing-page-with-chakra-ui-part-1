@@ -9,7 +9,7 @@ import {
   Heading,
   Stack,
   Text
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 
 export default function Hero({
   title,
@@ -25,8 +25,9 @@ export default function Hero({
       justify={{ base: "center", md: "space-around", xl: "space-between" }}
       direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
-      minH="60vh"
+      minH="70vh"
       px={8}
+      mb={16}
       {...rest}
     >
       <Stack
@@ -56,13 +57,12 @@ export default function Hero({
         </Heading>
         <Link to={ctaLink}>
           <Button
-            variantColor="primary"
+            colorScheme="primary"
             borderRadius="8px"
             py="4"
             px="4"
             lineHeight="1"
             size="md"
-            rightIcon="chevron-right"
           >
             {ctaText}
           </Button>
